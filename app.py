@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def dashboard():
-    df = pd.read_scv("tetris_sales.csv")
+    df = pd.read_csv("tetris_sales.csv")
     total_sales = df["Total"].sum()
     return render_template("dashboard.html", table=df.to_html(classes='table table-striped', index=False), total=total_sales)
 
