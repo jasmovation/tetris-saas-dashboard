@@ -4,7 +4,7 @@ This is a simple Flask-based SaaS-style dashboard that simulates sales data for 
 
 ---
 
-## 🚀 Features
+## Features
 
 - Python + Flask web app
 - Random sales data generator
