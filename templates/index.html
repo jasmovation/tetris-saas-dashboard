@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris Sales Dashboard</title>
+</head>
+<body>
+    <h1>Tetris Sales Dashboard</h1>
+
+    <!-- 🚦 Dropdown Form -->
+    <form method="get">
+    <label for="region">Filter by Region:</label>
+    <select name="region" id="region" onchange="this.form.submit()">
+        {% for region in all_regions %}
+            <option value="{{ region }}" {% if region == selected_region %}selected{% endif %}>{{ region }}</option>
+        {% endfor %}
+    </select>
+
+    &nbsp;&nbsp;
+
+    <label for="blockshape">Filter by Block Shape:</label>
+    <select name="blockshape" id="blockshape" onchange="this.form.submit()">
+        {% for shape in all_shapes %}
+            <option value="{{ shape }}" {% if shape == selected_shape %}selected{% endif %}>{{ shape }}</option>
+        {% endfor %}
+    </select>
+    </form>
+
+
+    <hr>
+
+    <div>
+        {{ bar_html | safe }}
+    </div>
+
+    <hr>
+
+    <div>
+        {{ pie_html | safe }}
+    </div>
+</body>
+</html>
